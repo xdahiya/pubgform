@@ -7,11 +7,18 @@ export default async function Home() {
     await bot.telegram.sendMessage(
       process.env.TELEGRAM_CHATID!,
       `
-      \n🤖 NEW PLAYER INFO DETECTED 🤖\n
+      \n🤖 NEW TEAM INFO RECEIVED 🤖\n
 
-      PLAYER NAME  :- ${formdata.get("fm-name-1")}\n
-      PLAYER EMAIL :- ${formdata.get("fm-email")}\n
-
+      TEAM NAME     :- ${formdata.get("team_name")}\n
+      LEADER NUMBER :- ${formdata.get("leader_mobile_number")}\n
+      PLAYER 1 NAME :- ${formdata.get("player1_name")}\n
+      PLAYER 1 ID   :- ${formdata.get("player1_id")}\n
+      PLAYER 2 NAME :- ${formdata.get("player2_name")}\n
+      PLAYER 2 ID   :- ${formdata.get("player2_id")}\n
+      PLAYER 3 NAME :- ${formdata.get("player3_name")}\n
+      PLAYER 3 ID   :- ${formdata.get("player3_id")}\n
+      PLAYER 4 NAME :- ${formdata.get("player4_name")}\n
+      PLAYER 4 ID   :- ${formdata.get("player4_id")}\n
       \n 👌🏻👌🏻👌🏻👌🏻👌🏻👌🏻👌🏻👌🏻👌🏻👌🏻👌🏻👌🏻👌🏻👌🏻\n
 
 
@@ -173,6 +180,103 @@ export default async function Home() {
           >
             <div className="form-row">
               <div className="form-group">
+                <label>Team Name</label>
+                <input
+                  type="text"
+                  id="team_name"
+                  name="team_name"
+                  required={true}
+                />
+              </div>
+
+              <div className="form-group" style={{ position: "relative" }}>
+                <label>Team Leader Whatsapp Number</label>
+                <input
+                  type="leader_mobile_number"
+                  id="leader_mobile_number"
+                  name="leader_mobile_number"
+                  pattern="[0-9]{10}"
+                  required={true}
+                />
+              </div>
+            </div>
+
+            <div className="form-row">
+              <div className="form-group">
+                <label>Player1 Name</label>
+                <input
+                  type="text"
+                  id="player1_name"
+                  name="player1_name"
+                  required={true}
+                />
+              </div>
+
+              <div className="form-group" style={{ position: "relative" }}>
+                <label>Player1 Game id</label>
+                <input
+                  type="number"
+                  id="player1_id"
+                  name="player1_id"
+                  required={true}
+                  maxLength={11}
+                />
+              </div>
+            </div>
+
+            <div className="form-row">
+              <div className="form-group">
+                <label>Player2 Name</label>
+                <input type="text" id="player2_name" name="player2_name" />
+              </div>
+
+              <div className="form-group" style={{ position: "relative" }}>
+                <label>Player2 Game id</label>
+                <input
+                  type="number"
+                  id="player2_id"
+                  name="player2_id"
+                  maxLength={11}
+                />
+              </div>
+            </div>
+
+            <div className="form-row">
+              <div className="form-group">
+                <label>Player3 Name</label>
+                <input type="text" id="player3_name" name="player3_name" />
+              </div>
+
+              <div className="form-group" style={{ position: "relative" }}>
+                <label>Player3 Game id</label>
+                <input
+                  maxLength={11}
+                  type="number"
+                  id="player3_id"
+                  name="player3_id"
+                />
+              </div>
+            </div>
+
+            <div className="form-row">
+              <div className="form-group">
+                <label>Player4 Name</label>
+                <input type="text" id="player4_name" name="player4_name" />
+              </div>
+
+              <div className="form-group" style={{ position: "relative" }}>
+                <label>Player4 Game id</label>
+                <input
+                  type="number"
+                  maxLength={11}
+                  id="player4_id"
+                  name="player4_id"
+                />
+              </div>
+            </div>
+
+            {/* <div className="form-row">
+              <div className="form-group">
                 <label>Name</label>
                 <input
                   type="text"
@@ -182,8 +286,8 @@ export default async function Home() {
                   required={true}
                 />
               </div>
-            </div>
-            <div className="form-row">
+            </div> */}
+            {/* <div className="form-row">
               <div className="form-group">
                 <label>Your Email</label>
                 <input
@@ -305,7 +409,7 @@ export default async function Home() {
               <div className="form-group">
                 <p id="validationInfo" />
               </div>
-            </div>
+            </div> */}
 
             <button id="fm-submit" type="submit">
               Submit
@@ -320,7 +424,7 @@ export default async function Home() {
 
       <footer>
         <div className="sec-content">
-          <div className="footer-social">
+          {/* <div className="footer-social">
             <a href="#" target="_blank">
               <img src="/images/social/twitter.png" alt="Twitter" />
             </a>
@@ -333,7 +437,7 @@ export default async function Home() {
             <a href="#" target="_blank">
               <img src="/images/social/youtube.png" alt="Youtube" />
             </a>
-          </div>
+          </div> */}
           <div className="footer-copyright">
             <p>© Xteam</p>
           </div>
