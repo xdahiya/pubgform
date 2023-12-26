@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        
+        <!--===========================================================
+		|		       This script is created by Bhikan 	 	      |
+        |                     @thebhikandeshmukh                      |
+		============================================================-->
+        
+        
+        
+		<!--=====================================
+		|		Google Analytics Code here	 	|
+		=======================================-->
+		
+		
+		<!--=====================================
+		|		End Of Google Analytics Code 	|
+		=======================================-->
+
+	   	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    	<meta name="HandheldFriendly" content="true" />
+		
+		<meta name="description" content="Tournament for pubg players" />
+		<meta name="google" value="notranslate" />
+
+		<!-- title -->
+		<title>PUBG WARRIORS</title>
+        <link rel="icon" type="png" sizes="16x16" href="https://i.imgur.com/1VfHXNh.png"><!-- ***************Change picture here********************-->
+        
+		<!--=====================================
+		|				OG Part				 	|
+		=======================================-->
+        
+	    <meta property="og:type" content="website" />
+	    <meta property="og:title" content="PUBG WARRIORS" />
+	    <meta property="og:description" content="Tournament for pubg players" />
+	    <meta property="og:site_name" content="Play and earn" />
+		<meta property="og:image" content="https://i.imgur.com/qQBsZgy.jpg" /><!-- ***************Change picture here********************-->
+		
+		<!--=====================================
+		|				css Part				 |
+		=======================================-->
+        
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"/>
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.9/css/mdb.min.css" rel="stylesheet" />
+        
+        <style>
+            body {
+                background-image: url(https://i.imgur.com/8YlZ0Op.jpg); background-repeat: no-repeat; /* ***************Change picture here******************** */
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            .logo{
+                position: relative;
+                width: 100%;
+                margin-top: 40px;
+                text-align: center;
+            }
+			
+
+
+            .showcase{
+                position: relative;
+                margin: 20px;
+                padding: 10px;
+                text-align: center;
+                margin-bottom: 5px;
+            }
+            .showcase img{
+                border: 2px solid #f5bd20;
+            }
+            .content-wrapper{
+                width: 100%;
+                padding: 20px;
+				max-width: 500px;
+				margin: auto;
+            }
+
+            .custom-card{
+                background-color: transparent;
+                color: #fff;
+                overflow: hidden;
+                border-radius: 2px;
+                margin-bottom: 20px;
+            }
+            .custom-card:before{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: #000;
+                z-index: 100;
+                opacity: 0.5;
+            }
+            .custom-card .card-body{
+                z-index: 101;
+                opacity: 1;
+            }
+            .card-title{
+                color: #fff;
+                font-size: 18px;
+            }
+            label{
+                color: #fff;
+                text-align: left;
+                width: 100%;
+            }
+
+            .custom-select, .form-control{
+                background-color: transparent;
+                color: #fff;
+            }
+            .custom-select option{
+                background-color: #ff8800;
+                color: #000;
+            }
+
+            .custom-select:focus{
+                border: 1px solid #fff;;
+                box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(255, 136, 0, 0.5);
+
+            }
+            input[type="text"]:focus{
+                border: 1px solid #fff;
+                box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(255, 136, 0, 0.5);
+                background-color: transparent;
+                color: #fff;
+            }
+
+            .process{
+                display: none;
+            }
+            .step-wrapper{
+                position: relative;
+                width: 100%;
+                height: 50px;
+            }
+            .step-indicator{
+                display: flex;
+                flex-direction: row; 
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                margin-bottom: 25px;
+            }
+            .step{
+                font-size: 12px;
+            }
+            .step.active{
+                color: #f5bd20;
+            }
+            .pbar{
+                position: absolute;
+                left: 20px;
+                right: 20px;
+                height: 5px;
+                background-color: #775b0a;
+                border-radius: 5px;
+            }
+            .dot{
+                top: -5px;
+                position: absolute;
+                height: 15px;
+                width: 15px;
+                background-color: #775b0a;
+                border-radius: 100%;
+                z-index: 2;
+            }
+            .dot.active{
+                background-color: #f5bd20;
+            }
+            #dot1{ left: -1px;}
+            #dot2{ left: 50%;}
+            #dot3{ right: -5px;}
+            .pbar-complete{
+                position: absolute;
+                left: 2px;
+                right: 2px;
+                height: 5px;
+                background-color: #f5bd20;
+                border-radius: 5px;
+                z-index: 1;
+                width: 0%;
+            }
+            .status-logo{
+                margin: 20px 0;
+                text-align: center;
+                animation: 5s ease 0s normal none infinite scale;
+            }
+            @keyframes scale {
+                0% {
+
+                    transform:scale(1);
+                }
+                50% {
+
+                    transform:scale(1.1);
+                }
+
+                100% {
+                    transform:scale(1);
+                }
+            }
+            .status-text{
+                display: none;
+                background-color: #f5bd20;
+                color: #000;
+                padding: 5px;
+                font-size: 14px;
+                text-align: center;
+            }
+
+            .share{
+                color: #fff;
+                font-size: 16px;
+                display: none;
+            }
+
+            .share-btn{
+                margin: 10px 0;
+            }
+            .final-step{
+                text-align: center;
+                font-size: 30px;
+                color: #f5bd20;
+                margin-top: 20px;
+                text-shadow: 0px 1px 0px #000000;
+                font-weight: bold;
+                display: none;
+            }
+            .desc{
+                color: #f80;
+            }
+            
+            .myAd{
+                margin: 10px;
+                text-align: center;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="logo">
+            <img src="https://i.imgur.com/hRX6LTf.png" class="img-fluid"/><!-- ***************Change picture here********************-->
+        </div>
+        
+        <!--=====================================
+		|		you can set your ad here 320X50	|
+		=======================================-->
+		<div class="myAd">
+	
+	
+        </div>
+		<!--=====================================
+		|		           End Of ad 	        |
+		=======================================-->
+        
+        
+        <div class="showcase">
+            <img src="https://i.imgur.com/EsqbytA.jpg" class="img-fluid" id="showcase_img"/><!-- ***************Change picture here********************-->
+        </div>
+        
+<!------wishing poem Here ----->
+        
+<p style="text-align: center;"><span style="background-color: #f44336;color: #ffffff; font-size: 22pt; font-family: tahoma, arial, helvetica, sans-serif;">&nbsp;<b>Registration Open</b></strong>&nbsp;</span></p>
+
+<!------wishing poem Here ----->
+        
+<div class="card custom-card">
+                <div class="card-body">
+                    <div class="card-text">
+                            <p style="text-align: center;"><span style="background-color: #f44336;color: #ffffff; font-size: 22pt; font-family: tahoma, arial, helvetica, sans-serif;">&nbsp;UPDATE</strong>&nbsp;</span></p>
+                        <p class="desc">
+                            <b>SQUAD ONLY</b>
+                        </p>  
+                            
+                        <p class="desc">
+                            <h>MATCHES :- 4</h>
+                        </p> 
+                            
+                        <p class="desc">
+                            <h>ERANGLE (08/03/2020) <b>07.00 PM</b></h>
+                        </p>
+                        
+                        <p class="desc">
+                            <h>SANHOK (08/03/2020) <b>08.00 PM</b></h>
+                        </p>
+                        
+                        <p class="desc">
+                            <h>MIRAMAR (08/03/2020) <b>09.00 PM</b></h>
+                        </p>
+                        
+                        <p class="desc">
+                            <h>ERANGLE (08/03/2020) <b>10.00 PM</b> </h>
+                        </p>
+                        
+                        <p class="desc">
+                            <h>TIME : - ID PASSWORD send via whatsapp 15 min ago</h>
+                        </p>
+                        
+                        <p class="desc">
+                            <b>PRIZE : - TOTAL AMMOUNT OF AVAILABLE SQUAD FEES</b>
+                        </p>
+    
+                        <p class="desc">
+                            <b>ENTRY FEES : - 50.00 INR</b><h>(NO REFUND)</h>
+                        </p>
+
+                        <p class="desc">
+                            <h><b>NOTE :-</b> REGISTRATION CLOSE @ SHARP 6.00 PM 08/03/2020 </h>
+                        </p>     
+    
+    <a href="https://www.instamojo.com/@pubgworriors/l763125c9c9884b38bf7ae855a2e567b1/" rel="im-checkout" data-text="REGISTER" data-css-style="color:#ffffff; background:#f44336; width:400px; border-radius:4px"   data-layout="vertical"></a>
+<script src="https://js.instamojo.com/v1/button.js"></script>
+    
+                        
+                    </div>
+                </div>
+            </div>        
+        
+
+
+<div class="card custom-card">
+                <div class="card-body">
+                    <div class="card-text">
+                            <h4 class="card-title mb-3 text-center">HOW TO REGISTER</h4>
+                        <p class="desc">
+                            <h>1. Click On <b>REGISTER</b></h>
+                        </p>  
+                            
+                        <p class="desc">
+                            <h>2. Enter <b>Squad Members ID Name </b> &amp; Fill <b>Email</b> Or <b>Current Mobile No.</b></h>
+                        </p> 
+                            
+                        <p class="desc">
+                            <h>3. Click On <b>Next.</b></h>
+                        </p>
+                        <p class="desc">
+                            <h>4. Select <b>Payment Method</b> &amp; Take <b>Screenshot After Successfully Payment.</b></h>
+                        </p>
+                        <p class="desc">
+                            <h>5. Keep Screenshot Carefully (For PRIZE)</b></h>
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+
+<div class="card custom-card">
+                <div class="card-body">
+                    <div class="card-text">
+                            <h4 class="card-title mb-3 text-center">PRIZE DISTRIBUTION</h4>
+                        <p class="desc">
+                            <h>1. Bank Transfer</h>
+                        </p>  
+                            
+                        <p class="desc">
+                            <h>2. UPI</h>
+                        </p> 
+                            
+                        <p class="desc">
+                            <h>3. Paytm</h>
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+    
+<div class="card custom-card">
+                <div class="card-body">
+                    <div class="card-text">
+                            <h4 class="card-title mb-3 text-center">TERM &amp; CONDITION</h4>
+                        <p class="desc">
+                            <b>1. Room ID Or Password Send Via WhatsApp</b>
+                        </p>
+                        <p class="desc">
+                            <h>2. the system. If teamers/hackers are found in the match, please report their IDs to Tencent on their support or use the 'Report' option in-game.</h>
+                        </p>
+                        <p class="desc">
+                            <h>3. No rematch shall be given in case of any teamers or hackers in the match.</h>
+                        </p>
+                        <p class="desc">
+                            <h>4. The Result will be adjusted accordingly.</h>
+                        </p>
+                        <p class="desc">
+                            <h>5. The total score of the Player (Position + Kill) will determine their final position in the tournament.</h>
+                        </p>
+                        <p class="desc">
+                            <h>6. Teaming/Hacking would result in a permanent ban for the Player from all the future tournaments.</h>
+                        </p>
+                        <p class="desc">
+                            <h>7. The Players shall be allotted reward according to the final position and kills you secure in the Finale match.</h>
+                        </p>
+                        <p class="desc">
+                            <h>8. Only registered 4 members allowed.</h>
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+    
+<div class="card custom-card">
+                <div class="card-body">
+                    <div class="card-text">
+                            <h4 class="card-title mb-3 text-center">SUPPORT</h4>
+                        <p class="desc">
+                            <h>WhatsApp Only :-</h>
+                        </p>  
+                            
+                        <p class="desc">
+                            <h>1. Vicky  :-  +919455129796</h>
+                        </p> 
+                            
+                        <p class="desc">
+                            <h>2. Mukti :-  +919658000357</h>
+                        </p>
+                        
+                        <p class="desc">
+                            <h>3. D. N.  :-  +918600525401</h>
+                        </p>
+                         
+                        <p class="desc">
+                            <h>3. Chinu  :- +918249764818</h>
+                        </p>
+   
+                        <p class="desc">
+                            <h>3. Yamraj  :- +917326992064</h>
+                        </p>
+
+                    </div>
+                </div>
+            </div>              
+		
+    </body>
+</html>
